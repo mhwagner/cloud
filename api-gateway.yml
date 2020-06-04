@@ -10,3 +10,11 @@ zuul:
     echo-service:
       path: /echo/** #path that will be intercepted
       url: http://localhost:8091 #which url the request will e mapped to
+      
+ribbon: # Eureka interface with Ribbon must be disabled so Ribbon will use the list of servers indicated below
+  eureka:
+    enabled: false
+echo-service:
+  ribbon:
+    listOfServers: http://localhost:8091,http://localhost:8092
+    # Above is the list of servers and ports where the different instances of the service is deployed, so Ribbon can use them for load balancing
