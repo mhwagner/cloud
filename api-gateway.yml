@@ -6,12 +6,8 @@ server:
 # It just take all request to the path echo/ and fordward to the server localhost:8091
 zuul:
   ignoredServices: '*'
-  #prefix: /api
-  host:
-    connect-timeout-millis: 20000
-    socket-timeout-millis: 20000
-    routes:
-      echo-service:
-        path: /echo/** #path that will be intercepted
-        url: http://localhost:8091 #which url the request will e mapped to
-        stripPrefix: false  #if zuul should replace the "/sample/" segment
+  routes:
+    echo-service:
+      path: /echo/** #path that will be intercepted
+      url: http://localhost:8091 #which url the request will e mapped to
+      stripPrefix: false  #if zuul should replace the "/sample/" segment
