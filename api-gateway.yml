@@ -10,4 +10,3 @@ zuul:
     echo-service:
       path: /echo/** #path that will be intercepted
       url: http://localhost:8091 #which url the request will e mapped to
-      stripPrefix: false  #if zuul should replace the "/sample/" segment
